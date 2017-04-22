@@ -1,0 +1,14 @@
+# basic bar graph example from Derek Bruening's PhD defense
+=cluster;First;Second
+yformat=%gx
+xlabel=Benchmark
+ylabel=Memory usage versus code size
+rotateby=45
+
+=table
+ammp_foo	15.07	25.07
+"name with spaces"	5.66	15.66
+accent-on-e:é	6.90	6.90
+snowman:☃	10	9.7
+firstonly	22.0	-
+secondonly	-	9.0
