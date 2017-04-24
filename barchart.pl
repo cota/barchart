@@ -196,7 +196,7 @@ my $arr_opts = {
     },
     'horizline' => {
 	func => sub {
-	    my @arr = map { "f(x)=$_,f(x) notitle dt 1" } @{ $_[0] };
+	    my @arr = map { "f(x)=$_,f(x) notitle lt -1" } @{ $_[0] };
 	    push @plot_default_lines, @arr;
 	},
 	doc => 'Draws a horizontal line at the specified y value',
