@@ -199,7 +199,10 @@ These parameters can be set several times.
 * `extraops=foo`: Specifies a command to pass straight to gnuplot. See also the
   -e command-line argument.
 
-* `horizline=foo`: Draws a horizontal line at the specified y value.
+* `horizline=foo`: Draws a horizontal line at the specified y value. Passes
+  verbatim any arguments beyond the y value, which is useful to specify the
+  style of the line, e.g. "horizline=1 lt -1 lw 2". The default style is "lt
+  -1".
 
 ## Sample Charts
 

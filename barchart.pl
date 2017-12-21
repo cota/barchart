@@ -196,10 +196,19 @@ my $arr_opts = {
     },
     'horizline' => {
 	func => sub {
-	    my @arr = map { "f(x)=$_,f(x) notitle lt -1" } @{ $_[0] };
+	    my @arr = ();
+	    foreach my $val (@{ $_[0] }) {
+		if ($val =~ m/\s*([^\s]+)(.*)/) {
+		    my $y = $1;
+		    my $style = (defined($2) and $2 ne '') ? $2 : 'lt -1';
+		    push @arr, "f(x)=$y,f(x) notitle $style";
+		} else {
+		    die "Invalid horizline value: $val";
+		}
+	    }
 	    push @plot_default_lines, @arr;
 	},
-	doc => 'Draws a horizontal line at the specified y value',
+	doc => 'Draws a horizontal line at the specified y value. Passes verbatim any arguments beyond the y value, which is useful to specify the style of the line, e.g. "horizline=1 lt -1 lw 2". The default style is "lt -1"',
     },
 };
 
